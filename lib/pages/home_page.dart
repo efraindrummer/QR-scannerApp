@@ -40,7 +40,9 @@ class _HomePageBody extends StatelessWidget {
     final currentIndex = uiProvider.selectedMenuOpt;
 
     //leer la base de datos
-    DBProvider.db.database;
+    //DBProvider.db.database;
+    final tempScan = new ScanModel(valor: 'https://efraincode.netlify.app/');
+    DBProvider.db.nuevoScan(tempScan);
 
     switch(currentIndex){
       case 0:
