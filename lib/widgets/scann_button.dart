@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:qreader/providers/scan_list_provider.dart';
 
 class ScanButton extends StatelessWidget {
 
@@ -10,8 +12,10 @@ class ScanButton extends StatelessWidget {
       onPressed: ()async{
         //String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode('#3D8BEF', 'Cancelar', false, ScanMode.QR);
         final barcodeScanRes = 'https://efraincode.netlify.app/';
+        final scanListProvider = Provider.of<ScanListProvider>(context, listen: false);
 
-        print(barcodeScanRes);
+        scanListProvider.nuevoScan(barcodeScanRes);
+        scanListProvider.nuevoScan('geo: 15.33,15.66');
       },
     );
   }
