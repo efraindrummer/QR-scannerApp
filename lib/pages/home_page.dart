@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qreader/pages/direcciones_page.dart';
-import 'package:qreader/providers/db_provider.dart';
 import 'package:qreader/providers/ui_provider.dart';
 import 'package:qreader/widgets/custom_navigatorBar.dart';
 import 'package:qreader/widgets/scann_button.dart';
@@ -38,11 +37,6 @@ class _HomePageBody extends StatelessWidget {
     final uiProvider = Provider.of<UiProvider>(context);
     
     final currentIndex = uiProvider.selectedMenuOpt;
-
-    //leer la base de datos
-    //DBProvider.db.database;
-    //final tempScan = new ScanModel(valor: 'https://efraincode.netlify.app/');
-    DBProvider.db.getTodosScans().then(print);
 
     switch(currentIndex){
       case 0:
