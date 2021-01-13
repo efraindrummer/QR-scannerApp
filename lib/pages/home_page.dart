@@ -41,8 +41,8 @@ class _HomePageBody extends StatelessWidget {
 
     //leer la base de datos
     //DBProvider.db.database;
-    final tempScan = new ScanModel(valor: 'https://efraincode.netlify.app/');
-    DBProvider.db.nuevoScan(tempScan);
+    //final tempScan = new ScanModel(valor: 'https://efraincode.netlify.app/');
+    DBProvider.db.getTodosScans().then(print);
 
     switch(currentIndex){
       case 0:
