@@ -11,8 +11,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-    final scanListProvider = Provider.of<ScanListProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -22,7 +20,7 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.delete_forever), 
             onPressed: (){
-              scanListProvider.borrarTodos();
+              Provider.of<ScanListProvider>(context, listen: false).borrarTodos();
             }
           )
         ],
